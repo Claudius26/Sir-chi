@@ -1,18 +1,22 @@
-public class TaskSix {
+public class TaskSeven {
 
-	public static void main(String[] args){
- 	for(int number = 4; number < 10; number +=4) {
-	System.out.print(number);
-	int value =0;
-	value = number;
-		for (int count = 0; count < 5; count++) {
-			value *=4;
+	public static void main(String[] args) {
+	
+	for (int number = 1; number < 10; number++ ) {
 
-			System.out.print((value));
+	if (number % 4 == 0) {
+	int multiple = 1;
+	int sumOfMultiple = 0;
+	for (int count = 1; count <= 5; count++){
+
+	multiple *= number;
+
+	sumOfMultiple += multiple;
+
+	}
+	System.out.print(sumOfMultiple);
 }
+
 }
-
-
-
 }
 }
