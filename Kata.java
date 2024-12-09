@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Kata {
 
-// 	checking if number is even;
 	public static boolean isEven(int number){
 
 	if (number % 2 == 0) {
@@ -17,7 +16,6 @@ public class Kata {
 
 
 }
-// 	checking the abstract of two numbers;
 	public static int isSubtract(int number1,int number2){
 
 	int subtract = number1 - number2;
@@ -41,7 +39,7 @@ public class Kata {
 	}	
 
 
-// 	checking if number is prime;
+
 	public static boolean isPrime(int number){
 
 	if (number <  2|| (number / 2 == 0 && number != 2) || (number / 3 == 0 && number != 3)) {
@@ -105,20 +103,73 @@ public class Kata {
 	for(int count = 1 ;count < number;count++){
 
 
-	if (number / count == count){
+	if (count * count == number && count == count ){
 
 	System.out.print("\ntrue");
 	return true;
 	}
 	}
+
+	System.out.print("\nfalse");
 	return false;
 	
+	}
+
+	public static boolean isPalindrome(int number){
+
+	int lastNumber = number % 10;
+	int wholeNumberOne = number / 10;
+	int fourthNumber = wholeNumberOne % 10;
+	int wholeNumberTwo = wholeNumberOne / 10;
+	int thirdNumber = wholeNumberTwo % 10;
+	int wholeNumberThree = wholeNumberTwo / 10;
+	int secondNumber = wholeNumberThree % 10;
+	 wholeNumberTwo = wholeNumberThree / 10;
+
+	if (wholeNumberTwo == lastNumber && secondNumber == fourthNumber){
+	
+
+	System.out.println("\ntrue");
+
+	return true;
+
+	}
+
+
+	System.out.println("\nfalse");
+
+	return false;
+
+	}
+
+	public static int factoralOf(int number){
+
+	int factoralOfNumber = 1;
+
+	for(int count = number;count > 0;count--){
+
+	factoralOfNumber *= count;
+
+	}
+
+	System.out.println("The factoral is " + factoralOfNumber);
+	return factoralOfNumber;	
+
+	}
+
+	public static long squareOfNumber(int value){
+
+	int squareOfValue = value * value;
+
+	System.out.println("The Square of " + value + " is " + value + "*" + value + " which is " + squareOfValue);
+	return squareOfValue;
+
 	}
 
 	public static void main(String[] args) {
 
 	Scanner scan = new Scanner(System.in);
-
+ 
 		System.out.println("Enter number");
 		int value = scan.nextInt();
 		
@@ -133,6 +184,14 @@ public class Kata {
 		quotient(value , integer);
 		factors(value);
 		isSquare(value);
+
+		System.out.println("\nEnter a 5 digit number to see if it is a palindrome");
+		int digit = scan.nextInt();
+
+		isPalindrome(digit);
+
+		factoralOf(value);
+		squareOfNumber(integer);
 
 
 
